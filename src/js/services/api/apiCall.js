@@ -49,6 +49,8 @@ export default function apiCall(route, body = {}, method='GET') {
          When handleErrors completes - the promise completes successfully
          When handleErrors throws an exception - the promise completes unsuccessfully
       */
+     //let mPServerFix = "http://localhost:8080";
+     //SERVER_URL
       fetch(`${SERVER_URL}/${route}`, requestDetails)
         .then(handleErrors)
         .then(resolve)
