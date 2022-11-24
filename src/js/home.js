@@ -1,4 +1,6 @@
 import './general';
+import './navbar';
+
 const regeneratorRuntime = require("regenerator-runtime");
 
 /* Part 1 - Check out the validation module in services/formValidation */
@@ -7,6 +9,7 @@ import apiCall from './services/api/apiCall';
 
 import toastr from 'toastr';
 import 'toastr/toastr.scss';
+import changeNavbar from './navbar';
 
 class Home {
   constructor() {
@@ -42,6 +45,7 @@ class Home {
     //  This is used instead of the binding process used in last labs
     this.$form.addEventListener('submit', event => {this.onFormSubmit(event)});
 
+    document.getElementById("navbar").innerHTML = changeNavbar("Home");
   }
 
   /* Part 3 - Write the first version of onFormSubmit */
